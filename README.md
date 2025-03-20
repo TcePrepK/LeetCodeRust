@@ -6,9 +6,9 @@ My solutions for randomized [LeetCode](https://leetcode.com/problemset/) problem
 
 Each problem has a folder with the solutions inside.
 
-|                                              | Runtime | Memory |
-|:--------------------------------------------:|:-------:|:------:|
-| [Question 1448](./question_1448/src/main.rs) |   0ms   | 2.04mb |
+|                                             | Runtime | Memory |
+|:-------------------------------------------:|:-------:|:------:|
+| [Question 1448](./question_1448/src/lib.rs) |   0ms   | 2.04mb |
 
 ## License
 
