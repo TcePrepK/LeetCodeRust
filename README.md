@@ -9,6 +9,7 @@ Each problem has a folder with the solutions inside.
 |                                             | Runtime | Memory |
 |:-------------------------------------------:|:-------:|:------:|
 | [Question 1448](./question_1448/src/lib.rs) |   0ms   | 2.04mb |
+| [Question 1197](./question_1197/src/lib.rs) |   0ms   | 2.21mb |
 
 ## License
 
