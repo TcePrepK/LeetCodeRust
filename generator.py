@@ -156,3 +156,4 @@ if __name__ == "__main__":
     handle_snippet_deconstruction(data)
     create_rust_project(data)
     update_readme(data)
+    print(f"Question {data["id"]} has been created!")
