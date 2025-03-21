@@ -24,9 +24,18 @@ use question_{id}::Solution;
 
 fn main() {{\n"""
 
+    param_amount = data["paramAmount"]
+    inputs = [[] for _ in range(len(examples) // param_amount)]
     for i in range(len(examples)):
+        inputs[i // param_amount].append(examples[i] + ".into()")
+
+    for i in range(len(inputs)):
         example = examples[i]
-        main_code += f"    println!(\"Example {i + 1} -> {{}}\", Solution::{function_name}({example}.into()));\n"
+        main_code += f"""\
+    println!(
+        "Example {i + 1} -> {{}}",
+        Solution::{function_name}({", ".join(inputs[i])})
+    );\n"""
     main_code += "}"
 
     return main_code
@@ -87,7 +96,6 @@ def get_question_info(slug: str):
             "title": question["title"],
             "id": question["questionId"],
             "desc": question["content"],
-            "difficulty": question["difficulty"],
             "examples": question["exampleTestcases"],
             "snippet": rust_snippet
         }
@@ -99,10 +107,10 @@ def get_question_info(slug: str):
 
 def handle_snippet_deconstruction(data):
     snippet = data["snippet"]
-    reg = r"(\w+)\s*\(.+\:\s*(.+)\)"
+    reg = r"(\w+)\s*\((.*)\)"
     matches = re.findall(reg, snippet)
     data["functionName"] = matches[0][0]
-    data["functionType"] = matches[0][1]
+    data["paramAmount"] = len(matches[0][1].split(","))
 
 
 def create_rust_project(data):
