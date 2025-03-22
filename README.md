@@ -14,6 +14,7 @@ Each problem has a folder with the solutions inside.
 | [Question 1783](./question_1783/src/lib.rs) |   0ms   | 2.82mb |
 | [Question 1575](./question_1575/src/lib.rs) |   3ms   | 4.10mb |
 |  [Question 982](./question_982/src/lib.rs)  |   4ms   | 2.97mb |
+| [Question 3699](./question_3699/src/lib.rs) |  149ms  | 6.09mb |
 
 ## License
 
